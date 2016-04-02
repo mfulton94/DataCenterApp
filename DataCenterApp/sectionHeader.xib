@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Biko_Regular.otf">
+            <string>Biko</string>
+            <string>Biko</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="dataSectionHeader" customModule="DataCenterApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpV-wb-KfR">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Power(kw/h)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyo-Do-Oq6">
+                            <rect key="frame" x="469" y="14" width="91" height="17"/>
+                            <fontDescription key="fontDescription" name="Biko" family="Biko" pointSize="12"/>
+                            <color key="textColor" red="0.74117647060000003" green="0.76470588240000004" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o74-Oy-UMA">
+                            <rect key="frame" x="40" y="13" width="37" height="17"/>
+                            <fontDescription key="fontDescription" name="Biko" family="Biko" pointSize="12"/>
+                            <color key="textColor" red="0.74117647060000003" green="0.76470588240000004" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="hyo-Do-Oq6" firstAttribute="centerY" secondItem="xpV-wb-KfR" secondAttribute="centerY" id="2bm-Oi-viC"/>
+                        <constraint firstItem="o74-Oy-UMA" firstAttribute="centerY" secondItem="xpV-wb-KfR" secondAttribute="centerY" id="kah-tf-hvR"/>
+                        <constraint firstAttribute="height" constant="44" id="nSy-48-m4B"/>
+                        <constraint firstAttribute="trailing" secondItem="hyo-Do-Oq6" secondAttribute="trailing" constant="30" id="qOs-5M-prS"/>
+                        <constraint firstItem="o74-Oy-UMA" firstAttribute="leading" secondItem="xpV-wb-KfR" secondAttribute="leading" constant="50" id="zPk-4M-rT9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="xpV-wb-KfR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Wtx-xT-4pY"/>
+                <constraint firstAttribute="trailing" secondItem="xpV-wb-KfR" secondAttribute="trailing" id="Zh9-fD-RYR"/>
+                <constraint firstItem="xpV-wb-KfR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rdH-r0-DRk"/>
+                <constraint firstAttribute="bottom" secondItem="xpV-wb-KfR" secondAttribute="bottom" id="rlK-je-wAX"/>
+                <constraint firstItem="xpV-wb-KfR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zUd-I7-Z9d"/>
+                <constraint firstItem="xpV-wb-KfR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="zUo-oo-idC"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="rdH-r0-DRk"/>
+                    <exclude reference="zUo-oo-idC"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="header" destination="xpV-wb-KfR" id="FVR-FZ-Vlv"/>
+            </connections>
+            <point key="canvasLocation" x="590" y="472"/>
+        </view>
+    </objects>
+</document>
