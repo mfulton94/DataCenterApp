@@ -74,7 +74,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
                 let dataEntry = ChartDataEntry(value: data.value, xIndex:index)
                 dataEntries.append(dataEntry)
                 dataPoints?.append(data.time)
-                index++
+                index += 1;
             }
             
             let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Data Center Values")

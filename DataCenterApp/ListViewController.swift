@@ -11,6 +11,10 @@ import Lock
 
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBAction func logout(sender: UIBarButtonItem) {
+        let url = NSURL(string: "https://manhattancollege.auth0.com/v2/logout")
+        UIApplication.sharedApplication().openURL(url!)
+    }
 
     // Outlets
     // MARK: - Outlets
@@ -18,6 +22,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // Variables
     // MARK: - Variables
+    var controller: A0LockViewController = A0Lock.sharedLock().newLockViewController()
+    var userName: String!
     let menuItems: [String] = ["Compressor", "Cold Water Pump", "Chilled Water Pump", "Cooling Tower", "Settings"]
     enum colors {
         case OK, Alert, Other
@@ -42,8 +48,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.translucent = false
         
-        let controller = A0Lock.sharedLock().newLockViewController()
+        print("I was called")
         controller.closable = false
+        controller.disableSignUp = true
+        
         controller.onAuthenticationBlock = { (profile, token) in
             let name = profile!.name.componentsSeparatedByString(".")[0]
             self.navigationItem.title = name
@@ -116,6 +124,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
       
         } else if segue.identifier == "presentSettingsView" {
             
+            (segue.destinationViewController as! SettingsViewController).userName = self.userName
         }
         
         

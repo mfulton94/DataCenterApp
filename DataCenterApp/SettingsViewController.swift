@@ -10,7 +10,20 @@ import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDataSource, UITextFieldDelegate {
     
+    @IBOutlet weak var settingsTableView: UITableView!
+    @IBAction func startCalculations(sender: UISwitch) {
+        
+    }
     let options = ["Start Calculations", "Building Size (sqft)", "Number of Computers", "Number of People", "Computer Power Usage", "Battery System Rating"]
+    var userName: String!
+    var startCalc: Bool!
+    var buildingSize: Int!
+    var computerCount: Int!
+    var peopleCount: Int!
+    
+    // if user exists, pull data from db
+    // if new user, create new db entry using userName
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,7 +62,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITextFie
         } else {
                 let cell = tableView.dequeueReusableCellWithIdentifier("infoCell", forIndexPath: indexPath) as! infoTableViewCell
              cell.infoLabel.text = options[indexPath.row]
-             cell.valueLabel.text = ""
+             cell.valueLabel.text = "65 W"
             return cell
         }
     }
@@ -74,8 +87,15 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITextFie
         // and the statement returns true; else it returns false
         return string == filtered
     }
-
-
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        print("I made it part 2")
+        self.settingsTableView.endEditing(true)
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
     /*
     // MARK: - Navigation
 

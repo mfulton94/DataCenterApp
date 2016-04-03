@@ -46,6 +46,7 @@ PODS:
 DEPENDENCIES:
   - Charts
   - Lock (~> 1.22)
+  - Lock/Core (~> 1.16)
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
