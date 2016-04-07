@@ -6,7 +6,6 @@ framework module Lock {
 
   private header "A0JSONResponseSerializer.h"
   private header "A0Logging.h"
-  private header "A0Stats.h"
   private header "A0WebAuthentication.h"
   private header "Constants.h"
   private header "NSDictionary+A0QueryParameters.h"

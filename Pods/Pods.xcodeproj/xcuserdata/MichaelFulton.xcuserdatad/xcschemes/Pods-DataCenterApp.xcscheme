@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '0067239942861B644C1CA735'
+               BlueprintIdentifier = 'D5DF29FB59BEE8E3BD9BCB35'
                BlueprintName = 'Pods-DataCenterApp'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_DataCenterApp.framework'>

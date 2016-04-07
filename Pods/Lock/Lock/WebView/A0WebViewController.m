@@ -31,9 +31,10 @@
 #import "A0AuthParameters.h"
 #import "A0Lock.h"
 #import "Constants.h"
+#import <Masonry/Masonry.h>
 
 @interface A0WebViewController () <UIWebViewDelegate>
-@property (weak, nonatomic) IBOutlet UIWebView *webview;
+@property (weak, nonatomic) UIWebView *webview;
 @property (strong, nonatomic) NSURL *authorizeURL;
 @property (strong, nonatomic) A0WebAuthentication *authentication;
 @property (copy, nonatomic) NSString *connectionName;
@@ -47,16 +48,13 @@
 
 AUTH0_DYNAMIC_LOGGER_METHODS
 
-- (instancetype)init {
-    return [self initWithNibName:NSStringFromClass(self.class) bundle:[NSBundle bundleForClass:self.class]];
-}
-
 - (instancetype)initWithAPIClient:(A0APIClient * __nonnull)client
                    connectionName:(NSString * __nonnull)connectionName
                        parameters:(nullable A0AuthParameters *)parameters {
     self = [self init];
     if (self) {
         _authentication = [[A0WebAuthentication alloc] initWithClientId:client.clientId domainURL:client.baseURL connectionName:connectionName];
+        [_authentication setTelemetryInfo:[client telemetryInfo]];
         _authorizeURL = [_authentication authorizeURLWithParameters:[parameters asAPIPayload]];
         _connectionName = connectionName;
         _client = client;
@@ -66,11 +64,24 @@ AUTH0_DYNAMIC_LOGGER_METHODS
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    UIWebView *webview = [[UIWebView alloc] initWithFrame:CGRectZero];
+
+    [self.view addSubview:webview];
+    [webview mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    self.webview = webview;
+    self.automaticallyAdjustsScrollViewInsets = YES;
     NSURLRequest *request = [NSURLRequest requestWithURL:self.authorizeURL];
     [self.webview loadRequest:request];
     NSString *cancelTitle = self.localizedCancelButtonTitle ?: A0LocalizedString(@"Cancel");
     [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:cancelTitle style:UIBarButtonItemStylePlain target:self action:@selector(cancel:)]];
     [self showProgressIndicator];
+}
+
+- (void)setTelemetryInfo:(NSString *)telemetryInfo {
+    self.authentication.telemetryInfo = telemetryInfo;
 }
 
 - (void)cancel:(id)sender {

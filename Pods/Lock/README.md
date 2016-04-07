@@ -25,7 +25,7 @@ Lock makes it easy to integrate SSO in your app. You won't have to worry about:
 * [1Password](https://agilebits.com/onepassword) integration using [iOS Extension](https://github.com/AgileBits/onepassword-app-extension).
 * Passwordless authentication using **TouchID**, **Email** and **SMS**.
 
-## Requierements
+## Requirements
 
 You'll need iOS 7 or later, if you need to use it with an older version please use our previous SDK pod `Auth0Client` or check the branch [old-sdk](https://github.com/auth0/Lock.iOS-OSX/tree/old-sdk) of this repository.
 
@@ -34,7 +34,7 @@ You'll need iOS 7 or later, if you need to use it with an older version please u
 The Lock is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod "Lock", "~> 1.23"
+pod "Lock", "~> 1.24"
 ```
 
 ## Before Getting Started
