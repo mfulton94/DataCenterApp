@@ -8,6 +8,7 @@
 
 import UIKit
 import Lock
+import SwiftyJSON
 
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -19,6 +20,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     // Outlets
     // MARK: - Outlets
     @IBOutlet weak var menuTableView: UITableView!
+    
+    let zipcode = "10471"
+    var disabled: Bool! = false
     
     // Variables
     // MARK: - Variables
@@ -39,6 +43,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    
     // General Functions
     // MARK: - General
     override func viewDidLoad() {
@@ -52,7 +57,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         controller.closable = false
         controller.disableSignUp = true
         
-        controller.onAuthenticationBlock = { (profile, token) in
+       /* controller.onAuthenticationBlock = { (profile, token) in
             let name = profile!.name.componentsSeparatedByString(".")[0]
             self.navigationItem.title = name
             
@@ -60,7 +65,27 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             self.dismissViewControllerAnimated(true, completion: nil)
         }
-        self.presentViewController(controller, animated: true, completion: nil)
+        self.presentViewController(controller, animated: true, completion: nil)*/
+        
+        let urlString = "api.openweathermap.org/data/2.5/weather?appid=4652c4e97586b04cd55827cab31b4ec1&zip=\(zipcode),us&units=imperial"
+        
+        if let url = NSURL(string: urlString){
+            let data = NSData(contentsOfURL: url)
+               // let json = JSON(data: data!)
+                let temp = 30
+                print(temp)
+                if temp > 20 {
+                    print("I was here")
+                    disabled = true
+                } else {
+                    disabled = false
+                }
+                
+                
+            }
+        
+        
+        
 
     }
 
@@ -91,13 +116,19 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("menuCell", forIndexPath: indexPath) as! menuTableViewCell
         
+          
+            
+        
         cell.menuLabel.text = menuItems[indexPath.row]
         if indexPath.row == 4 {
             cell.contentView.backgroundColor = colors.Other.rawColor()
         } else {
             // TODO: Color Change
             // Perform condition for color change based on the conditions of the algorithms
-            
+            if disabled  == true {
+                print("I cant")
+                cell.selectionStyle = .None
+            }
         }
         
         return cell

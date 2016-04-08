@@ -6,6 +6,7 @@ use_frameworks!
 target 'DataCenterApp' do
 pod 'Charts'
 pod 'Lock', '~> 1.22'
+ pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 
 end
 

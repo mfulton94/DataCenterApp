@@ -12,15 +12,26 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITextFie
     
     @IBOutlet weak var settingsTableView: UITableView!
     @IBAction func startCalculations(sender: UISwitch) {
+        if startCalc == true {
+            startCalc = false
+        }
+        else {
+            startCalc = true
+        }
+        
         
     }
-    let options = ["Start Calculations", "Building Size (sqft)", "Number of Computers", "Number of People", "Computer Power Usage", "Battery System Rating"]
+    let options = ["Start Calculations", "Building Size (sqft)", "Number of Computers", "Number of People", "Computer Power Usage", "Battery System Rating", "Tons"]
     var userName: String!
-    var startCalc: Bool!
-    var buildingSize: Int!
-    var computerCount: Int!
-    var peopleCount: Int!
-    
+    var startCalc: Bool! = false
+    var buildingSize: Int! = 38000
+    var computerCount: Int! = 180
+    var peopleCount: Int! = 160
+    var wattspc: Int! = 85
+    var rating: Int! = 65
+    var tons: Int! = 31
+    var CHWR: Int!
+    var CHWS: Int!
     // if user exists, pull data from db
     // if new user, create new db entry using userName
     
@@ -41,7 +52,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITextFie
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return options.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -54,6 +65,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITextFie
             let cell = tableView.dequeueReusableCellWithIdentifier("fieldCell", forIndexPath: indexPath) as! fieldsTableViewCell
             
             cell.fieldLabel.text = options[indexPath.row]
+            cell.field.tag = indexPath.row
             cell.field.delegate = self
             
             
@@ -61,8 +73,16 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITextFie
             
         } else {
                 let cell = tableView.dequeueReusableCellWithIdentifier("infoCell", forIndexPath: indexPath) as! infoTableViewCell
+            // Condition statement, check indexpath.row
              cell.infoLabel.text = options[indexPath.row]
-             cell.valueLabel.text = "65 W"
+            switch indexPath.row {
+                case 4:
+                  cell.valueLabel.text = "\(wattspc)"
+                case 5:
+                  cell.valueLabel.text = "\(rating)"
+                default:
+                  cell.valueLabel.text = "\(tons)"
+            }
             return cell
         }
     }
@@ -94,7 +114,42 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITextFie
     }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
+        print(textField.tag)
+        switch textField.tag{
+            case 1:
+                if let text = textField.text {
+                    buildingSize = Int(text)
+                    // save to database
+                }
+       
+           
+            case 2:
+            if let text = textField.text {
+                computerCount = Int(text)
+            }
+            default:
+            if let text = textField.text {
+                peopleCount = Int(text)
+            }
+        }
         return true
+    }
+    
+    func calculateTons() {
+        
+        
+        let itEquipment = wattspc * computerCount
+        let ups = (0.04 * Double(rating)) + (0.05 * Double(itEquipment))
+        let powerDist = (0.01 * Double(rating)) + (0.02 * Double(itEquipment))
+        let sqFootLighting = buildingSize * 2
+        let peopleWattage = peopleCount * 100
+        var total = Double(itEquipment) + ups
+            total += powerDist + Double(sqFootLighting)
+            total += Double(peopleWattage)
+        let btuhr = Double(total) * 3.41
+        let gpm = btuhr / (Double(CHWR - CHWS) * 500.0)
+        tons = Int(gpm * Double(CHWR - CHWS) / 24)
+        
     }
     /*
     // MARK: - Navigation

@@ -89,6 +89,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-DataCenterApp/CocoaLumberjack.framework"
   install_framework "Pods-DataCenterApp/Lock.framework"
   install_framework "Pods-DataCenterApp/Masonry.framework"
+  install_framework "Pods-DataCenterApp/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-DataCenterApp/AFNetworking.framework"
@@ -96,4 +97,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-DataCenterApp/CocoaLumberjack.framework"
   install_framework "Pods-DataCenterApp/Lock.framework"
   install_framework "Pods-DataCenterApp/Masonry.framework"
+  install_framework "Pods-DataCenterApp/SwiftyJSON.framework"
 fi

@@ -44,10 +44,21 @@ PODS:
     - CocoaLumberjack (~> 2.0)
     - Lock/CoreUI
   - Masonry (0.6.4)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - Charts
   - Lock (~> 1.22)
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: 2a5b70f06001316d4fb54501edc70b4084705da0
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -55,5 +66,6 @@ SPEC CHECKSUMS:
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   Lock: 49139edbbde9e0bee0a7877c744de7a21eed638f
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
 COCOAPODS: 0.39.0
