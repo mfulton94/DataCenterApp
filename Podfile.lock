@@ -25,6 +25,7 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.2.0):
     - CocoaLumberjack/Default
+  - Firebase (2.5.1)
   - Lock (1.24.1):
     - CocoaLumberjack (~> 2.0)
     - Lock/Core (= 1.24.1)
@@ -48,6 +49,7 @@ PODS:
 
 DEPENDENCIES:
   - Charts
+  - Firebase
   - Lock (~> 1.22)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
 
@@ -64,6 +66,7 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Charts: f54267bb3f0f0e74520c6f248517cf5074dfd6fc
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
+  Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
   Lock: 49139edbbde9e0bee0a7877c744de7a21eed638f
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a

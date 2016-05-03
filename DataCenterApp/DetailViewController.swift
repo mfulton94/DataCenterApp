@@ -12,22 +12,19 @@ import Charts
 class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
     @IBOutlet weak var dataTableView: UITableView!
-    var dataArray: [Data!] = []
+    var dataArray: [DataNow] = []
     var selectedComponent: String!
-    
+    var power = Power()
+    var powerArray:[String] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib(nibName: "sectionHeader", bundle: nil)
         dataTableView.registerNib(nib, forHeaderFooterViewReuseIdentifier: "sectionHeader")
-        var data: Data! = Data()
+       
 
-        for i in 1..<12 {
-            data.time = "\(i):15 am"
-            data.value = Double(arc4random_uniform(400))
-            dataArray.append(data)
-        }
+       
         
         
     }
@@ -61,6 +58,14 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+    /*
+     "CHWS (Chilled Water Supply)": 44,
+     "CHWR (Chilled Water Returned)": 53,
+     "CWS (Condenser Water Supply)": 79,
+     "CWR (Condeser Water Returned)": 89,
+     
+     */
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("graphCell", forIndexPath: indexPath) as! GraphTableViewCell
@@ -69,25 +74,70 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
             var dataPoints: [String?]? = []
             cell.graphView.xAxis.labelPosition = .Bottom
             cell.graphView.animate(xAxisDuration: 0.5, yAxisDuration: 0.5, easingOption: .EaseInBounce)
+            
             var index = 0
             for data in dataArray {
-                let dataEntry = ChartDataEntry(value: data.value, xIndex:index)
+                var value: Double!
+                switch selectedComponent {
+                    case "Chiller":
+                        value = power.data[indexPath.row]["Compressor Energy Usage kW"]
+                    
+                    case "Chilled Water Pump":
+                        value = power.data[indexPath.row]["Chilled Water Pump kW"]
+                    
+                    case "Cold Water Pump":
+                        value = power.data[indexPath.row]["Condenser Water Pump kW"]
+                    
+                    case "Cooling Tower":
+                        value = power.data[indexPath.row]["Power of Cooling Tower kW"]
+                default:
+                    print("hello")
+                }
+                let dataEntry = ChartDataEntry(value: value, xIndex:index)
                 dataEntries.append(dataEntry)
                 dataPoints?.append(data.time)
                 index += 1;
             }
             
             let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Data Center Values")
+        
             let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
+            
+           
             cell.graphView.data = lineChartData
+         
             
 
             return cell
             
         } else {
              let cell = tableView.dequeueReusableCellWithIdentifier("dataCell", forIndexPath: indexPath) as! dataTableViewCell
-            cell.timeLabel.text = dataArray[indexPath.row].time
-            cell.valueLabel.text = "\(dataArray[indexPath.row].value)"
+            
+            if let time = dataArray[indexPath.row].time {
+            cell.timeLabel.text = time
+                print(time)
+                
+            }
+            var value: Double!
+            switch selectedComponent {
+            case "Chiller":
+                value = power.data[indexPath.row]["Compressor Energy Usage kW"]
+                
+            case "Chilled Water Pump":
+                value = power.data[indexPath.row]["Chilled Water Pump kW"]
+                
+                
+            case "Cold Water Pump":
+                value = power.data[indexPath.row]["Condenser Water Pump kW"]
+                
+            case "Cooling Tower":
+                value = power.data[indexPath.row]["Power of Cooling Tower kW"]
+            default:
+                print("hello")
+            }
+
+            
+            cell.valueLabel.text = "\(value)"
             return cell
             
         }

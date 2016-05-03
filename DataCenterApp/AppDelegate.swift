@@ -8,6 +8,7 @@
 
 import UIKit
 import Lock
+//import AirshipKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,8 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+       /* UAirship.takeOff()
+        UAirship.push().userPushNotificationsEnabled = true*/
         // Override point for customization after application launch.
-        
         A0Lock.sharedLock().applicationLaunchedWithOptions(launchOptions)
         return true
     }
@@ -41,6 +43,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func receivedForegroundNotification(notification: [NSObject : AnyObject], fetchCompletionHandler completionHandler: ((UIBackgroundFetchResult) -> Void)) {
+        // App received a foreground notification
+        
+        // Call the completion handler
+        completionHandler(UIBackgroundFetchResult.NoData)
+    }
+    
+    func launchedFromNotification(notification: [NSObject : AnyObject], fetchCompletionHandler completionHandler: ((UIBackgroundFetchResult) -> Void)) {
+        // App was launched from a notification
+        
+        // Call the completion handler
+        completionHandler(UIBackgroundFetchResult.NoData)
+    }
+    
+    func launchedFromNotification(notification: [NSObject : AnyObject], actionIdentifier identifier: String, completionHandler: () -> Void) {
+        // App was launched from a notification action button
+        
+        // Call the completion handler
+        completionHandler()
+    }
+    
+    
+    func receivedBackgroundNotification(notification: [NSObject : AnyObject], actionIdentifier identifier: String, completionHandler: () -> Void) {
+        // App was launched in the background from a notificaiton action button
+        
+        // Call the completion handler
+        completionHandler()
+    }
+    
+    func receivedBackgroundNotification(notification: [NSObject : AnyObject], fetchCompletionHandler completionHandler: ((UIBackgroundFetchResult) -> Void)) {
+        // App received a background notification
+        
+        // Call the completion handler
+        completionHandler(UIBackgroundFetchResult.NoData)
     }
 
 

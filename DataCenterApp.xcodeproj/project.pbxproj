@@ -12,6 +12,13 @@
 		8A2137ED1CADDE1C0096DDC5 /* startTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2137EC1CADDE1C0096DDC5 /* startTableViewCell.swift */; };
 		8A2137EF1CADDE320096DDC5 /* fieldsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2137EE1CADDE320096DDC5 /* fieldsTableViewCell.swift */; };
 		8A2137F11CADDE650096DDC5 /* infoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2137F01CADDE650096DDC5 /* infoTableViewCell.swift */; };
+		8A6016AC1CCEBF7400B912E8 /* Airship in Resources */ = {isa = PBXBuildFile; fileRef = 8A6016AA1CCEBF7300B912E8 /* Airship */; };
+		8A6016AD1CCEBF7400B912E8 /* AirshipKit in Resources */ = {isa = PBXBuildFile; fileRef = 8A6016AB1CCEBF7300B912E8 /* AirshipKit */; };
+		8A6016BA1CCEC0E000B912E8 /* AirshipConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A6016B91CCEC0E000B912E8 /* AirshipConfig.plist */; };
+		8A79F7BD1CC05677005DDDC0 /* saveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79F7BC1CC05677005DDDC0 /* saveTableViewCell.swift */; };
+		8A79F7BF1CC088E4005DDDC0 /* dataSettingsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79F7BE1CC088E4005DDDC0 /* dataSettingsStruct.swift */; };
+		8A79F7C51CC586D7005DDDC0 /* FreeCoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79F7C41CC586D7005DDDC0 /* FreeCoolViewController.swift */; };
+		8A79F7C71CC5897F005DDDC0 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A79F7C61CC5897F005DDDC0 /* SettingsTableViewCell.swift */; };
 		8A86D13B1C9E11A70063EACD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A86D13A1C9E11A70063EACD /* AppDelegate.swift */; };
 		8A86D1401C9E11A70063EACD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A86D13E1C9E11A70063EACD /* Main.storyboard */; };
 		8A86D1421C9E11A70063EACD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A86D1411C9E11A70063EACD /* Assets.xcassets */; };
@@ -29,8 +36,24 @@
 		8A86D1621C9F3A190063EACD /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A86D1611C9F3A190063EACD /* Data.swift */; };
 		8A86D1641C9F679D0063EACD /* sectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A86D1631C9F679D0063EACD /* sectionHeader.xib */; };
 		8A86D1661C9F67F10063EACD /* dataSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A86D1651C9F67F10063EACD /* dataSectionHeader.swift */; };
+		8A99092D1CD25165001FB322 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A99092C1CD25165001FB322 /* DataCenter.swift */; };
+		8A9909311CD25768001FB322 /* DataNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9909301CD25768001FB322 /* DataNow.swift */; };
+		8AAE566E1CD25E2700742CB3 /* Power.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAE566D1CD25E2700742CB3 /* Power.swift */; };
 		9CB5FF9FCF49608533DF53C6 /* Pods_DataCenterApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 332C08A05D768ADEBF892A1B /* Pods_DataCenterApp.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8A6016B81CCEC05C00B912E8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		332C08A05D768ADEBF892A1B /* Pods_DataCenterApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataCenterApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +63,13 @@
 		8A2137EC1CADDE1C0096DDC5 /* startTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = startTableViewCell.swift; sourceTree = "<group>"; };
 		8A2137EE1CADDE320096DDC5 /* fieldsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fieldsTableViewCell.swift; sourceTree = "<group>"; };
 		8A2137F01CADDE650096DDC5 /* infoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoTableViewCell.swift; sourceTree = "<group>"; };
+		8A6016AA1CCEBF7300B912E8 /* Airship */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Airship; sourceTree = "<group>"; };
+		8A6016AB1CCEBF7300B912E8 /* AirshipKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AirshipKit; sourceTree = "<group>"; };
+		8A6016B91CCEC0E000B912E8 /* AirshipConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AirshipConfig.plist; sourceTree = "<group>"; };
+		8A79F7BC1CC05677005DDDC0 /* saveTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = saveTableViewCell.swift; sourceTree = "<group>"; };
+		8A79F7BE1CC088E4005DDDC0 /* dataSettingsStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dataSettingsStruct.swift; sourceTree = "<group>"; };
+		8A79F7C41CC586D7005DDDC0 /* FreeCoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeCoolViewController.swift; sourceTree = "<group>"; };
+		8A79F7C61CC5897F005DDDC0 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		8A86D1371C9E11A70063EACD /* DataCenterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataCenterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A86D13A1C9E11A70063EACD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A86D13F1C9E11A70063EACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +89,9 @@
 		8A86D1611C9F3A190063EACD /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		8A86D1631C9F679D0063EACD /* sectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sectionHeader.xib; sourceTree = "<group>"; };
 		8A86D1651C9F67F10063EACD /* dataSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dataSectionHeader.swift; sourceTree = "<group>"; };
+		8A99092C1CD25165001FB322 /* DataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
+		8A9909301CD25768001FB322 /* DataNow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataNow.swift; sourceTree = "<group>"; };
+		8AAE566D1CD25E2700742CB3 /* Power.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Power.swift; sourceTree = "<group>"; };
 		B41B1CB91287E4847C11985A /* Pods-DataCenterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCenterApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DataCenterApp/Pods-DataCenterApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +110,9 @@
 		8A86D12E1C9E11A70063EACD = {
 			isa = PBXGroup;
 			children = (
+				8A6016B91CCEC0E000B912E8 /* AirshipConfig.plist */,
+				8A6016AA1CCEBF7300B912E8 /* Airship */,
+				8A6016AB1CCEBF7300B912E8 /* AirshipKit */,
 				8A86D1391C9E11A70063EACD /* DataCenterApp */,
 				8A86D1381C9E11A70063EACD /* Products */,
 				93899E7DDA6DA872BDE2491A /* Pods */,
@@ -95,14 +131,21 @@
 		8A86D1391C9E11A70063EACD /* DataCenterApp */ = {
 			isa = PBXGroup;
 			children = (
+				8AAE566D1CD25E2700742CB3 /* Power.swift */,
+				8A99092C1CD25165001FB322 /* DataCenter.swift */,
 				8A86D1551C9F1AD00063EACD /* ListViewController.swift */,
+				8A9909301CD25768001FB322 /* DataNow.swift */,
 				8A2137E81CADB7200096DDC5 /* User.swift */,
 				8A86D14C1C9F07100063EACD /* Fonts */,
 				8A86D13A1C9E11A70063EACD /* AppDelegate.swift */,
 				8A86D13E1C9E11A70063EACD /* Main.storyboard */,
+				8A79F7C61CC5897F005DDDC0 /* SettingsTableViewCell.swift */,
+				8A79F7C41CC586D7005DDDC0 /* FreeCoolViewController.swift */,
 				8A2137EC1CADDE1C0096DDC5 /* startTableViewCell.swift */,
 				8A2137EE1CADDE320096DDC5 /* fieldsTableViewCell.swift */,
 				8A2137F01CADDE650096DDC5 /* infoTableViewCell.swift */,
+				8A79F7BC1CC05677005DDDC0 /* saveTableViewCell.swift */,
+				8A79F7BE1CC088E4005DDDC0 /* dataSettingsStruct.swift */,
 				8A2137EA1CADD8770096DDC5 /* SettingsViewController.swift */,
 				8A86D1631C9F679D0063EACD /* sectionHeader.xib */,
 				8A86D1651C9F67F10063EACD /* dataSectionHeader.swift */,
@@ -160,6 +203,7 @@
 				8A86D1351C9E11A70063EACD /* Resources */,
 				DB219824A78D6C3DFA2A06C1 /* Embed Pods Frameworks */,
 				6A348640C9EB7F45C24ED66C /* Copy Pods Resources */,
+				8A6016B81CCEC05C00B912E8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,6 +227,14 @@
 					8A86D1361C9E11A70063EACD = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = RM253QV824;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -212,8 +264,11 @@
 				8A86D1641C9F679D0063EACD /* sectionHeader.xib in Resources */,
 				8A86D1531C9F071B0063EACD /* Biko_Light-Restricted.otf in Resources */,
 				8A86D1451C9E11A70063EACD /* LaunchScreen.storyboard in Resources */,
+				8A6016AC1CCEBF7400B912E8 /* Airship in Resources */,
+				8A6016BA1CCEC0E000B912E8 /* AirshipConfig.plist in Resources */,
 				8A86D1421C9E11A70063EACD /* Assets.xcassets in Resources */,
 				8A86D1511C9F071B0063EACD /* Biko_Black.otf in Resources */,
+				8A6016AD1CCEBF7400B912E8 /* AirshipKit in Resources */,
 				8A86D1521C9F071B0063EACD /* Biko_Bold.otf in Resources */,
 				8A86D1541C9F071B0063EACD /* Biko_Regular.otf in Resources */,
 				8A86D1401C9E11A70063EACD /* Main.storyboard in Resources */,
@@ -276,18 +331,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A86D1581C9F1AE70063EACD /* DetailViewController.swift in Sources */,
+				8A79F7C51CC586D7005DDDC0 /* FreeCoolViewController.swift in Sources */,
+				8A9909311CD25768001FB322 /* DataNow.swift in Sources */,
 				8A86D15C1C9F1E5B0063EACD /* GraphTableViewCell.swift in Sources */,
 				8A2137EF1CADDE320096DDC5 /* fieldsTableViewCell.swift in Sources */,
+				8A79F7BF1CC088E4005DDDC0 /* dataSettingsStruct.swift in Sources */,
+				8A79F7C71CC5897F005DDDC0 /* SettingsTableViewCell.swift in Sources */,
 				8A2137EB1CADD8770096DDC5 /* SettingsViewController.swift in Sources */,
 				8A86D1601C9F21F60063EACD /* GraphViewController.swift in Sources */,
 				8A86D1561C9F1AD00063EACD /* ListViewController.swift in Sources */,
 				8A86D1661C9F67F10063EACD /* dataSectionHeader.swift in Sources */,
+				8A79F7BD1CC05677005DDDC0 /* saveTableViewCell.swift in Sources */,
 				8A86D15A1C9F1BD10063EACD /* menuTableViewCell.swift in Sources */,
 				8A86D13B1C9E11A70063EACD /* AppDelegate.swift in Sources */,
 				8A2137F11CADDE650096DDC5 /* infoTableViewCell.swift in Sources */,
 				8A2137ED1CADDE1C0096DDC5 /* startTableViewCell.swift in Sources */,
 				8A86D15E1C9F1E790063EACD /* valueTableViewCell.swift in Sources */,
+				8A99092D1CD25165001FB322 /* DataCenter.swift in Sources */,
 				8A2137E91CADB7200096DDC5 /* User.swift in Sources */,
+				8AAE566E1CD25E2700742CB3 /* Power.swift in Sources */,
 				8A86D1621C9F3A190063EACD /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,7 +466,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DataCenterApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mfulton.DataCenterApp;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.mfulton.DataCenterApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -419,7 +481,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DataCenterApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mfulton.DataCenterApp;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.mfulton.DataCenterApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
